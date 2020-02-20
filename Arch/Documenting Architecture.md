@@ -156,13 +156,13 @@ Views系列的视图，和视图之外需要说明的信息
 
 和环境的对应关系
 
-###### CC Style
+###### C&C Style
 
 运行时，组建的动态关系
 
 ###### Module Style
 
-结构的关系
+结构的关系。强调静态结构
 
 ##### Style vs. patterns
 
@@ -170,11 +170,13 @@ Views系列的视图，和视图之外需要说明的信息
 
 不但要怎么解决问题，还要看解决的是什么问题、问题的场景
 
-某一种形式，解决某种固定的一种状况。
+某一种形式，解决某种**特定上下文下的特定的问题**。
 
 在问题和场景下解决问题
 
 ###### Style
+
+关注架构的目的（architecture approach），一个抽象、轻量级的知道
 
 不限定在什么样的环境。更抽象的一个指导
 
@@ -196,25 +198,32 @@ Views系列的视图，和视图之外需要说明的信息
 
 #### Architectural Views
 
-一系列的元素，相互之间的关系，拆分成不同的视图来展示。
+一系列的元素，相互之间的关系，拆分成不同的视图来展示。未必是全部，而是一个特定类型
 
 不同的视角和维度去描述他。
 
-不同的视图能够满足不同的用户。
+不同的视图能够满足不同的用户和目标。
 
-针对某个质量属性。
+在特定的方面满足针对某些质量属性。
 
-#### Structural Views
+#### Structural Views 结构视图
 
 文档的主要部分
 
 结构视图
 
-##### Module Views
+##### Module Views 模块视图
 
 紧密的 对某些职责
 
 任何一个系统
+
+* Decomposition view
+* Uses view
+* Generalization view
+* Layered view
+* Aspects view
+* Data model view
 
 ###### Module和Module的关系
 
@@ -224,9 +233,21 @@ Views系列的视图，和视图之外需要说明的信息
 
 继承关系
 
-##### C&C Views
+##### C&C Views 组件连接件
 
 runtime 行为属性
+
+运行时状态，进程、对象、客户端、服务器、数据存储
+
+附件只是连接件连接到哪个组件
+
+* Pipe-and-filter view
+* Client-server view
+* Peer-to-Peer view
+* SOA view
+* Publish-subscribe view
+* Shared-data view
+* Multi-tier view
 
 ###### 元素
 
@@ -256,15 +277,20 @@ runtime的行为、交互
 
 外部的质量属性，要体现在部署之后，通过运行时的分析进行。
 
-##### Allocation Views
+##### Allocation Views 分配视图
 
 软件元素和外部环境的关系，如开发环境，需要的开发资源等
 
 完成开发之后，执行环境，硬件、周边环境的要求等。如航空、汽车的使用环境
 
-两类元素是否匹配兼容
+比较环境提供的属性和元素需要的属性来判断是否成功，两类元素是否匹配兼容
 
-有静态和动态的。
+有静态和动态的视图。
+
+* Deployment view
+* Install view
+* Work assignment view
+* Other allocation views
 
 ###### 元素
 
@@ -274,13 +300,19 @@ runtime的行为、交互
 
 allocated
 
-#### Quality Views
+#### Quality View质量视图
 
 某个特定的质量属性，屏蔽其他的element，只考虑相关的，来考虑影响
 
 和结构视图可能有一些重复，不过表述的重点是不同的。
 
 分析某一个质量属性是否被设计满足。局部测试。
+
+* Security view
+* Performance view
+* Reliability view
+* Communication view
+* Exception view (error-handling view)
 
 #### Documenting Views
 
